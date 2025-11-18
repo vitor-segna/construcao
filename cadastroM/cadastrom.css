@@ -1,0 +1,141 @@
+body{
+    background-color: #D9D9D9;
+}
+
+/*ESTILIZANDO A NAVBAR*/
+ul {
+    list-style-type: none;
+    padding: 20px 0; /* Ajuste o padding para 20px em cima/baixo e 0 nas laterais */
+    margin: 10px;
+    overflow: hidden;
+    background-color: #6C7A89;
+    border-radius: 10px;
+    
+    /* Adicionando Flexbox para distribuir os itens */
+    display: flex;
+    justify-content: space-around; /* Distribui os itens uniformemente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+/*ESTILIZANDO BOTAO NAVBAR MENU*/
+.menu a:hover {
+    background-color: #D9D9D9;
+    color: black;
+    border-radius: 5px;
+}
+
+/*ESTILIZANDO BOTAO NAVBAR login*/
+.login a:hover{
+    background-color: #FFB81C;
+    color: black;
+    border-radius: 5px;
+}
+
+/*ESTILIZANDO BOTAO NAVBAR CADASTRO*/
+.cadastroo a:hover{ 
+    background-color: #A52A2A;
+    color: black;
+    border-radius: 5px;
+}
+/*ESTILIZANDO BOTAO NAVBAR ESTOQUE*/
+.estoque a:hover{
+    background-color: #003366;
+    color: white;
+    border-radius: 5px;
+}
+.movimentacao a:hover{
+    background-color:  #A52A2A;
+    color: black;
+    border: 5px;
+}
+
+ul li {
+    /* Mantém o display para que os <a> ocupem o espaço corretamente */
+    display: inline-block; 
+    margin: 0; /* Remove as margens fixas */
+}
+
+
+
+
+/*DEFININDO TRANSICAO DE CORES NAVBAR,ALINHANDO,DEFININDO TAMANHO DE FONTE*/
+ul li a {
+    display: block;
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 25px;
+    transition: background-color 0.5s ease;
+    border-radius: 5px;          
+    
+    /* Aumenta o padding horizontal para esticar o botão (elemento <a>) */
+    padding: 10px 40px; /* Aumentei o valor de 20px para 40px */
+    width: 100%; /* Garante que ocupe a largura disponível no seu li */
+    box-sizing: border-box; /* Inclui padding na largura */
+}
+
+
+/* DIV QUADRADO GRANDE (CONTAINER PRINCIPAL) */
+.cards {
+    display: flex; /* Para centralizar o conteúdo do .cadastro */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente (se necessário mais tarde) */
+    width: 100%; /* Ocupa a largura total */
+    min-height: 80vh; /* Altura mínima para mostrar o container no meio da tela */
+    margin-top: 4.8%; /*Card para baixo da NavBar*/
+    
+}
+
+/* DIV ONDE ESTÃO OS CAMPOS DO FORMULÁRIO */
+.cadastro {
+    background-color: #fcd378; /* Cor de fundo cinza do quadrado principal */
+    padding: 30px; /* Preenchimento interno */
+    border-radius: 5px;
+    width: 600px; /* Largura fixa para o formulário */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    font-family: Arial, sans-serif; /* Fonte para o texto */
+    font-size: 20px; /* Tamanho da fonte para os labels/texto */
+    color: black;
+    
+}
+
+/* ESTILIZANDO OS INPUTS DE TEXTO E DATA (exceto o botão) */
+.cadastro input[type="text"],
+.cadastro input[type="date"] {
+    width: 100%; /* Ocupa a largura total do container */
+    padding: 10px;
+    margin-top: 2px; /* Espaço entre o label e o input */
+    margin-bottom: 20px; /* Espaço após cada campo */
+    box-sizing: border-box; /* Garante que padding e borda estejam incluídos na largura */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block; /* Garante que o input fique em sua própria linha */
+    background-color: white; /* Cor de fundo branca dos inputs */
+}
+
+/* ESTILIZANDO O BOTÃO ENVIAR */
+#env {
+    background-color: #E0E0E0; /* Cor cinza claro do botão */
+    color: black;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    display: block; /* Faz com que o botão ocupe sua própria linha */
+    width: 30%; /* Largura do botão */
+    margin: 30px auto 0 auto; /* Centraliza o botão e adiciona margem superior */
+    transition: background-color 0.3s ease;
+}
+
+/*definindo cor do botao enviar*/
+#env:hover {
+    background-color: #cccccc;
+}
+/* Ajuste para remover a margem inferior do último campo antes do botão (opcional) */
+.cadastro input[name="tipo"] {
+    margin-bottom: 0;
+}

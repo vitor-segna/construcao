@@ -1,0 +1,128 @@
+<?php
+session_start();
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: login.php");
+    exit;
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./cadastrop.css">
+</head>
+<body>
+   
+    <!--NAV BAR-->
+    <ul>
+    <li class="menu"><a href="">Menu</a></li>
+    <li class="login"><a href="">Login</a></li>
+    <li class="cadastroo"><a href="">Cadastro de produtos</a></li>
+    <li class="movimentacao"><a href="">Cadastro movimentação</a></li>
+    <li class="estoque"><a href="">Estoque</a></li>
+    <li class="login"><img src="/icon.png" id="icone-usuario"></li>
+    </ul>
+    
+    <!--Informaçoes do cadastro cliente-->
+    <div id="info-usuario" style="display:none; position: absolute; right: 20px; top: 90px; background-color: #fcd378; border: 1px solid #ccc; padding: 15px; z-index: 100; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <h4 style="margin-top: 0;">Usuário Logado</h4>
+    <p style="margin: 5px 0;">Nome: <strong id="display-nome"></strong></p>
+    <p style="margin: 5px 0;">Email: <strong id="display-email"></strong></p>
+    </div>
+
+    <!--DIV DO QUADRADO GRANDE amarelo-->
+    <div class="cards">
+                   
+    <div class="cadastro">
+     <!--INPUTS PARA ADICIONAR--> 
+     Nome:<input type="text" name="nome" ids="ids"><br>  
+     SKU:<input type="text" name="sku" id="ids" ><br>
+     Categoria:<input type="text" name="cate" id="ids" required><br>
+     Descrição:<input type="text" name="descricao" id="ids"><br>
+     Cor:<input type="text" name="cor" id="ids"><br>
+     Unidade de Medida:<input type="text" name="uni" id="ids"><br>
+     Data de Criação:<input type="date" name="data_criacao" id="ids"><br>
+    Textura:<input type="text" name="textura" id="ids"><br>
+    Aplicação:<input type="text" name="aplicacao" id="ids"><br>
+    Estoque Mínimo:<input type="number" step="0.01" name="estoque_minimo" id="ids"><br>
+     <input type="submit" value="Enviar" id="env"><!--BOTAO ENVIAR-->
+    </div> 
+    </div>
+
+
+    <script src="./cadastro.js"></script>
+</script>
+</body>
+</html>
+
+    <?php
+    $servername = "localhost";
+    $database = "saep_db";
+    $username = "root";
+    $password = "";
+
+    $conn = mysqli_connect(
+        $servername,
+        $username,
+        $password,
+        $database
+    );
+    if (!$conn) {
+        die("Falha na conexão: " . mysqli_connect_error());
+    }
+    echo "<p>Conectado com Sucesso</p>";
+
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $nome = $_POST['nome'];
+        $sku = $_POST['sku'];
+        $categoria = $_POST['categoria'];
+        $descricao = $_POST['descricao'];
+        $cor = $_POST['cor'];
+        $unidade_medida = $_POST['unidade_medida'];
+        $data_criacao = $_POST['data_criacao'];
+        $textura = $_POST['textura'];
+        $aplicacao = $_POST['aplicacao'];
+        $estoque_minimo = $_POST['estoque_minimo'];
+
+        $sql = "insert into produto (
+        nome,
+        sku,
+        categoria,
+        descricao,
+        cor,
+        unidade_medida,
+        data_criacao,
+        textura,
+        aplicacao,
+        estoque_minimo
+        )
+        values(
+        '$nome',
+        '$sku',
+        '$categoria',
+        '$descricao',
+        '$cor',
+        '$unidade_medida',
+        '$data_criacao',
+        '$textura',
+        '$aplicacao',
+        '$estoque_minimo'
+        ); ";
+
+        if (mysqli_query($conn, $sql)) {
+            echo "<p class='text'>Comando executado com sucesso</p>";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+        mysqli_close($conn);
+    }
+
+    ?>
+</body>
+
+</html>

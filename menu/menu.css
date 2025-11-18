@@ -1,0 +1,121 @@
+.body{
+   /*Imagem tamanho, posicao*/
+    background-image: url('../imagens/tijoloechao.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Necessário para posicionamento do .loginn se precisar de ajustes */
+    margin-top: -1%;
+    border-radius: 5px; 
+    overflow: hidden; 
+}
+
+/*ESTILIZANDO A NAVBAR*/
+ul {
+    list-style-type: none;
+    padding: 20px 0; /* Ajuste o padding para 20px em cima/baixo e 0 nas laterais */
+    margin: 10px;
+    overflow: hidden;
+    background-color: #6C7A89;
+    border-radius: 10px;
+    
+    /* Adicionando Flexbox para distribuir os itens */
+    display: flex;
+    justify-content: space-around; /* Distribui os itens uniformemente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+
+/*ESTILIZANDO BOTAO NAVBAR login*/
+.login a:hover{
+    background-color: #FFB81C;
+    color: black;
+    border-radius: 5px;
+}
+
+/*ESTILIZANDO BOTAO NAVBAR CADASTRO*/
+.cadastroo a:hover{ 
+    background-color: #A52A2A;
+    color: black;
+    border-radius: 5px;
+}
+/*ESTILIZANDO BOTAO NAVBAR ESTOQUE*/
+.estoque a:hover{
+    background-color: #003366;
+    color: white;
+    border-radius: 5px;
+}
+.movimentacao a:hover{
+    background-color:  #A52A2A;
+    color: black;
+    border: 5px;
+}
+
+ul li {
+    /* Mantém o display para que os <a> ocupem o espaço corretamente */
+    display: inline-block; 
+    margin: 0; /* Remove as margens fixas */
+}
+
+
+
+
+/*DEFININDO TRANSICAO DE CORES NAVBAR,ALINHANDO,DEFININDO TAMANHO DE FONTE*/
+ul li a {
+    display: block;
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 25px;
+    transition: background-color 0.5s ease;
+    border-radius: 5px;          
+    
+    /* Aumenta o padding horizontal para esticar o botão (elemento <a>) */
+    padding: 10px 40px; /* Aumentei o valor de 20px para 40px */
+    width: 100%; /* Garante que ocupe a largura disponível no seu li */
+    box-sizing: border-box; /* Inclui padding na largura */
+}
+
+
+
+/*ESTILIZANDO CARD CINZA ESCURO*/
+.cinza{
+    background-color: #A5ABB0;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 80%; /* largura */
+    min-height: 75vh; 
+    margin: 4.8% auto 0 auto; 
+    border-radius: 5px; /*borda*/
+}
+
+/*CARD CINZA CLARO*/
+.cinzz{
+    background-color: #D9D9D9;
+    display: flex;/*DEIXA PARADO*/
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    min-height: 50vh; 
+    margin: 2.4% auto 0 auto;/*tamanho para cima*/ 
+    border-radius: 5px;
+}
+
+/*FONTE TEXTO*/
+.font{
+  font-size: 39px;
+  text-align: center; /*texto no centro*/
+  margin-bottom: 16%;/*tamanho para cima*/
+}
+
+/*IMAGEM*/
+.img{
+   width: 35%; /*tamanho da imagem*/
+   margin-top: 20%;/*imagem para baixo*/
+}
