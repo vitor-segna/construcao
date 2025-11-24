@@ -23,7 +23,7 @@ function lidarComFalha(motivoDaFalha) {
     setTimeout(() => {
         window.location.replace(URL_LOGIN); 
     }, TEMPO_REDIRECIONAMENTO_MS);
-}
+    }
 
 // --- Função Principal: Tratamento do Envio do Formulário ---
 // Apenas executa se o formulário existir na página atual (provavelmente login.html)
