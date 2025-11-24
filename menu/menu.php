@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: ../menu/menu.php");
+    header("Location: ../login/login.php");
     exit;
 }
 ?>
@@ -18,10 +18,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <body>
      <!--NAVBAR-->
      <ul>
-    <li class="login"><a href="http://127.0.0.1:5501/login/login.html">Login</a></li>
-    <li class="cadastroo"><a href="http://127.0.0.1:5501/cadastro/cadastro.html">Cadastro de produtos</a></li>
-    <li class="movimentacao"><a href="">Cadastro movimentação</a></li>
-    <li class="estoque"><a href="">Estoque</a></li>
+    <li class="login"><a href="http://localhost/construcao/login/login.php">Login</a></li>
+    <li class="cadastroo"><a href="http://localhost/construcao/login/login.php">Cadastro de produtos</a></li>
+    <li class="movimentacao"><a href="http://localhost/construcao/login/login.php">Cadastro movimentação</a></li>
+    <li class="estoque"><a href="http://localhost/construcao/login/login.php">Estoque</a></li>
     </ul>
     
     <div class="cinza"><!--CARD CINZA ESCURO-->
