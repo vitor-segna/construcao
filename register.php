@@ -54,8 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <div class="mb-3">
                                 <label for="username" class="form-label">Usuário:</label>
                                 <input type="text" class="form-control" name="username" required>
-                            </div>
-                            <div class="mb-3">
                                 <label for="password" class="form-label">Senha:</label>
                                 <input type="password" class="form-control" name="password" required>
                             </div>
@@ -63,6 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </form>
                         <p class="mt-3 text-center"><a href="login.php">Já tem conta? Faça login</a></p>
                     </div>
+                            </div>
+                            <div class="mb-3">
                 </div>
             </div>
         </div>

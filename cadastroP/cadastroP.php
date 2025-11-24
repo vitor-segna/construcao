@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: login.php");
+    header("Location: ../login/login.php");
     exit;
 }
 ?>
@@ -14,6 +14,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="./cadastrop.css">
+    <script src="cadastro.js"></script>
 </head>
 <body>
    
@@ -54,14 +55,13 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     </div>
 
 
-    <script src="./cadastro.js"></script>
-</script>
-</body>
-</html>
+    
+
+
 
     <?php
     $servername = "localhost";
-    $database = "saep_db";
+    $database = "banco01";
     $username = "root";
     $password = "";
 
@@ -100,8 +100,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         textura,
         aplicacao,
         estoque_minimo
-        )
-        values(
+        )value(
         '$nome',
         '$sku',
         '$categoria',
@@ -123,6 +122,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     }
 
     ?>
+    
 </body>
-
 </html>

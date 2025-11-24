@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             infoPainel.style.display = 'block'; // Mostra
         }
     }
-
+    
     // 4. Adiciona o evento de clique ao ícone
     iconeUsuario.addEventListener('click', atualizarEExibirInfo);
     });
